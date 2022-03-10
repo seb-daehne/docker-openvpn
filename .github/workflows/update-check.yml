@@ -28,3 +28,4 @@ jobs:
     - name: check
       run: |
         docker images
+        docker inspect --format='{{.RepoDigests}}' seb-openvpn:local

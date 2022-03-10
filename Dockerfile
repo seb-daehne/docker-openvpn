@@ -9,6 +9,7 @@ LABEL maintainer="Kyle Manna <kyle@kylemanna.com>"
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories && \
     apk add --update openvpn iptables bash easy-rsa openvpn-auth-pam google-authenticator pamtester libqrencode && \
     ln -s /usr/share/easy-rsa/easyrsa /usr/local/bin && \
+    apk upgrade --available && \
     rm -rf /tmp/* /var/tmp/* /var/cache/apk/* /var/cache/distfiles/*
 
 # Needed by scripts
