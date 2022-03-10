@@ -28,4 +28,7 @@ jobs:
     - name: check
       run: |
         docker images
+        echo "checking checksum"
+        docker inspect --format='{{index .RepoDigests 0}}' seb-openvpn:local
         docker inspect --format='{{.RepoDigests}}' seb-openvpn:local
+        docker images --digests
