@@ -22,7 +22,8 @@ jobs:
         file: ./Dockerfile
         platforms: linux/amd64
         push: false
-        tags: local
+        load: true
+        tags: seb-openvpn:local
       
     - name: check
       run: |
