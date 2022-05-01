@@ -20,7 +20,7 @@ if [[ "$BOOTSTRAP_CA" == "TRUE" ]]; then
     if [ -f "/etc/openvpn/ovpn_env.sh" ]; then
         echo "config already initialized - skipping"
     else
-        ovpn_genconfig -u udp://VPN.SERVERNAME.COM
+        ovpn_genconfig -u $PROTOCOL://$VPN_HOSTNAME
         source "$OPENVPN/ovpn_env.sh"
         easyrsa init-pki
 
